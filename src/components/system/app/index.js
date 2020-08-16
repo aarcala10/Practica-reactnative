@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {} from 'react-native';
 import {Actions, Router, Scene, Stack} from 'react-native-router-flux';
-import {Splash} from '../../pages';
+import {Splash, Home} from '../../pages';
 
 class App extends Component {
   render() {
@@ -9,6 +9,7 @@ class App extends Component {
       <Router>
         <Stack key="root">
           <Scene key={'Splash'} component={Splash} hideNavBar />
+          <Scene key={'Home'} component={Home} />
         </Stack>
       </Router>
     );

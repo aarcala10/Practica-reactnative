@@ -5,6 +5,7 @@ const colors = {
   black: 'black',
   error: 'red',
   grey: 'grey',
+  blue: 'blue',
 };
 
 export default colors;
