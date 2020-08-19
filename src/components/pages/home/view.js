@@ -1,11 +1,19 @@
 import React from 'react';
-import {View, Image, Alert, FlatList, Dimensions} from 'react-native';
+import {
+  View,
+  Image,
+  Alert,
+  FlatList,
+  Dimensions,
+  SafeAreaView,
+} from 'react-native';
 import styles from './styles';
 import {getCountries} from '../../../api';
 import {} from 'react-native-reanimated';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import {CountryCard} from './../../molecules';
 
-const {width, height} = Dimensions.get('window');
+const {width} = Dimensions.get('window');
 
 class Home extends React.Component {
   constructor(props) {
@@ -24,31 +32,19 @@ class Home extends React.Component {
     }
   }
 
-  _renderItem = ({item}) => {
-    return (
-      <TouchableOpacity
-        onPress={() => Alert.alert('Atención', `${item.name} pulsado`)}
-        style={{width: width / 2}}>
-        <Image
-          resizeMode={'contain'}
-          source={{uri: item.flag}}
-          style={{width: '100%', height: 150}}
-        />
-      </TouchableOpacity>
-    );
-  };
+  _renderItem = ({item}) => <CountryCard country={item} />;
 
   render() {
     console.log('List countries: ', this.state.list);
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <FlatList
           data={this.state.list}
-          keyExtractor={(item, index) => `card-${item.code}`}
+          keyExtractor={(item) => `card-${item.code}`}
           numColumns={2}
           renderItem={this._renderItem}
         />
-      </View>
+      </SafeAreaView>
     );
   }
 }
