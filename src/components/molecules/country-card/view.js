@@ -14,12 +14,20 @@ class CountryCard extends Component {
   }
 
   async componentDidMount() {
+    this.mounted = true;
+
     const callback = (width, height) => {
-      const cardWidth = deviceWidth / 2;
-      const cardHeight = (cardWidth * height) / width;
-      this.setState({height: cardHeight, width: cardWidth});
+      if (this.mounted) {
+        const cardWidth = deviceWidth / 2;
+        const cardHeight = (cardWidth * height) / width;
+        this.setState({height: cardHeight, width: cardWidth});
+      }
     };
     Image.getSize(this.props.country.flag, callback);
+  }
+
+  componentWillUnmount() {
+    this.mounted = false;
   }
 
   render() {
