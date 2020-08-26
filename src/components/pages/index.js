@@ -1,3 +1,4 @@
 import Splash from './splash';
 import Home from './home';
-export {Splash, Home};
+import Holidays from './holidays';
+export {Splash, Home, Holidays};

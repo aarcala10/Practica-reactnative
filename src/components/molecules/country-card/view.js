@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import style from './styles';
-import {TouchableOpacity, Image, Dimensions, Text} from 'react-native';
+import {TouchableOpacity, Image, Text, Dimensions} from 'react-native';
 
 const deviceWidth = Dimensions.get('window').width;
 
@@ -31,10 +31,10 @@ class CountryCard extends Component {
   }
 
   render() {
-    const {country} = this.props;
+    const {country, onPress} = this.props;
     const {width, height} = this.state;
     return (
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => onPress(country)}>
         <Image
           resizeMode={'cover'}
           source={{uri: country.flag}}
