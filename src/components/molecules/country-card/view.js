@@ -43,7 +43,7 @@ class CountryCard extends Component {
         <Text
           style={{
             fontSize: 18,
-            alignItems: 'center',
+            marginTop: -35,
             textAlign: 'center',
           }}>
           {country.name}
@@ -52,5 +52,9 @@ class CountryCard extends Component {
     );
   }
 }
+
+CountryCard.defaultProps = {
+  onPress: () => {},
+};
 
 export default CountryCard;
