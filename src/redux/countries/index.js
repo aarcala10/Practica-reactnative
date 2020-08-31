@@ -1,4 +1,4 @@
-import * as countriesActions from './action';
+import * as countriesActions from './actions';
 import * as countriesTypes from './types';
 import reducer from './reducer';
 

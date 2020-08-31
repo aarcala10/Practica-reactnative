@@ -6,6 +6,7 @@ const deviceWidth = Dimensions.get('window').width;
 
 class Holidays extends React.Component {
   render() {
+    console.log('holiday props:', this.props);
     return <SafeAreaView style={style.container}></SafeAreaView>;
   }
 }

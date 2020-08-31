@@ -1,6 +1,6 @@
 import * as types from './types';
 
-export function UPDATE_LIST(newList) {
+export function updateList(newList) {
   const action = {
     type: types.UPDATE_LIST,
     payload: {list: newList},
