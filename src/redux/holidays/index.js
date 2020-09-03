@@ -1,4 +1,4 @@
-import * as holidaysActions from './action';
+import * as holidaysActions from './actions';
 import * as holidaysTypes from './types';
 import reducer from './reducer';
 

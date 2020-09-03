@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import style from './styles';
 import {TouchableOpacity, Image, Text, Dimensions} from 'react-native';
+import {color} from 'react-native-reanimated';
 
 const deviceWidth = Dimensions.get('window').width;
 
@@ -40,14 +41,7 @@ class CountryCard extends Component {
           source={{uri: country.flag}}
           style={{width: width, height: height}}
         />
-        <Text
-          style={{
-            fontSize: 18,
-            marginTop: -35,
-            textAlign: 'center',
-          }}>
-          {country.name}
-        </Text>
+        <Text style={style.card}>{country.name}</Text>
       </TouchableOpacity>
     );
   }

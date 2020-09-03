@@ -1,3 +1,4 @@
 import countries from './countries';
+import holidays from './holidays';
 
-export {countries};
+export {countries, holidays};

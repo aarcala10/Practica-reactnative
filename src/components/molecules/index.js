@@ -1,3 +1,3 @@
 import CountryCard from './country-card';
-
-export {CountryCard};
+import HolidayCard from './holiday-card';
+export {CountryCard, HolidayCard};

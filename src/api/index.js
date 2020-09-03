@@ -6,18 +6,15 @@ const instance = axios.create({
   headers: {
     'Content-type': 'application/json',
   },
-  //No se como meterle los params con axios...
-  params: {
-    //key: '7ceda30a-0c14-4e2d-881b-2e8b61251413',
-  },
 });
+const key = '7ceda30a-0c14-4e2d-881b-2e8b61251413';
 
 export const getCountries = () => {
-  const url = '/countries?key=7ceda30a-0c14-4e2d-881b-2e8b61251413';
+  const url = `/countries?key=${key}`;
   return instance.get(url);
 };
 
-export const getHolidays = () => {
-  const url = '/holidays?key=7ceda30a-0c14-4e2d-881b-2e8b61251413';
+export const getHolidays = (countryCode) => {
+  const url = `/holidays?key=${key}&country=${countryCode}&year=2019`;
   return instance.get(url);
 };

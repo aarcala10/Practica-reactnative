@@ -18,7 +18,7 @@ export const setItem = (item) => {
   return action;
 };
 
-export const setLoading = (loading) => {
+const setLoading = (loading) => {
   const action = {
     type: types.SET_LOADING,
     payload: {loading},
@@ -27,7 +27,6 @@ export const setLoading = (loading) => {
 };
 
 export const fetchCountries = () => {
-  console.log('fetching');
   return async (dispatch, getState) => {
     try {
       dispatch(setLoading(true));
