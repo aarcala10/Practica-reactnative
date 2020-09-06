@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {StatusBar} from 'react-native';
-import {Router, Scene, Stack} from 'react-native-router-flux';
-import {Splash, Home, Holidays} from '../../pages';
+import {Router, Scene, Stack, Actions} from 'react-native-router-flux';
+import {Splash, Home, Holidays, HolidayAdd} from '../../pages';
 import colors from '../../../assets/colors';
 import {Provider} from 'react-redux';
 import store from '../../../config/redux';
@@ -22,6 +22,17 @@ class App extends Component {
             <Scene
               key={'Holidays'}
               component={Holidays}
+              navigationBarStyle={{backgroundColor: 'cyan'}}
+              titleStyle={{color: colors.black}}
+              backButtonTextStyle={colors.black}
+              backButtonTintColor={colors.black}
+              rightButtonTextStyle={{color: 'black'}}
+              rightTitle={'Add'}
+              onRight={() => Actions.push('HolidayAdd')}
+            />
+            <Scene
+              key={'HolidayAdd'}
+              component={HolidayAdd}
               navigationBarStyle={{backgroundColor: 'cyan'}}
               titleStyle={{color: colors.black}}
               backButtonTextStyle={colors.black}
