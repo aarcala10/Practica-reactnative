@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, Text, View, TextInput} from 'react-native';
+import {SafeAreaView, Text, View, TextInput, Button} from 'react-native';
 import styles from './styles';
 import DatePicker from 'react-native-datepicker';
 
@@ -8,11 +8,23 @@ class HolidayAdd extends React.Component {
     super(props);
     this.state = {
       name: '',
-      date: '2019-01-1',
+      date: null,
     };
   }
+
+  saveHoliday = () => {
+    const {name, date} = this.state;
+    const {country} = this.props;
+    const data = {
+      country: country,
+      name: name,
+      date: date,
+    };
+    this.props.addHoliday(data);
+  };
+
   render() {
-    const {name, error} = this.state;
+    const {name, error, date, country} = this.state;
     return (
       <SafeAreaView styles={styles.container}>
         <View>
@@ -52,6 +64,13 @@ class HolidayAdd extends React.Component {
               this.setState({date: date});
             }}
           />
+          {name != '' && date != null ? (
+            <Button
+              style={{color: 'blue'}}
+              title="Save"
+              onPress={this.saveHoliday}
+            />
+          ) : null}
         </View>
       </SafeAreaView>
     );

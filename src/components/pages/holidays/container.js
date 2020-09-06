@@ -7,7 +7,6 @@ const mapStateToProps = (state) => {
   return {
     loading: state.holidays.loading,
     holidaysList: state.holidays.list,
-    total: state.holidays.total,
   };
 };
 const mapDispatchToProps = (dispatch) => {

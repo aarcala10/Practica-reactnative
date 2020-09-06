@@ -5,6 +5,7 @@ import {Splash, Home, Holidays, HolidayAdd} from '../../pages';
 import colors from '../../../assets/colors';
 import {Provider} from 'react-redux';
 import store from '../../../config/redux';
+import {countries} from '../../../redux';
 
 class App extends Component {
   constructor(props) {
